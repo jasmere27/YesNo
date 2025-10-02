@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Do you still like me? </title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  body {
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    flex-direction:column;
+    text-align:center;
+    color:#fff;
+  }
+
+  h1 {
+    font-size:2.5em;
+    margin-bottom:50px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  }
+
+  button {
+    padding:15px 30px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    position:relative;
+    margin:10px;
+  }
+
+  #yes {
+    background: linear-gradient(45deg,#ff6ec7,#ff3366);
+    color:white;
+  }
+
+  #yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+  }
+
+  #no {
+    background: linear-gradient(45deg,#ccc,#999);
+    color:#333;
+    position:absolute;
+  }
+
+</style>
+</head>
+<body>
+
+  <h1>Do you still like me? hehehe</h1>
+  <button id="yes" onclick="alert('Yay! You still like me :P')">Yes</button>
+  <button id="no">No</button>
+
+<script>
+  const noBtn = document.getElementById('no');
+
+  // Make "No" button run away when hovered
+  noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+
+  // Optional: Start "No" button at random position
+  const startX = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+  const startY = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  noBtn.style.left = `${startX}px`;
+  noBtn.style.top = `${startY}px`;
+</script>
+
+</body>
+</html>
